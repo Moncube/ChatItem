@@ -68,7 +68,6 @@ public class ChatEventListener implements Listener {
         return count;
     }
 
-    @SuppressWarnings("deprecation")
     @EventHandler(ignoreCancelled = true, priority = EventPriority.LOWEST)  //We need to have lowest priority in order to get to the event before DeluxeChat or other plugins do
     public void onChat(final AsyncPlayerChatEvent e) {
         if(e.getMessage().indexOf(SEPARATOR)!=-1){  //If the BELL character is found, we have to remove it
@@ -98,7 +97,7 @@ public class ChatEventListener implements Listener {
             }
             return;
         }
-        if (p.getItemInHand().getType().equals(Material.AIR)) {
+        if (p.getInventory().getItemInMainHand().getType().equals(Material.AIR)) {
             if (c.DENY_IF_NO_ITEM) {
                 e.setCancelled(true);
                 if (!c.DENY_MESSAGE.isEmpty())
@@ -154,7 +153,6 @@ public class ChatEventListener implements Listener {
     }
 
 
-    @SuppressWarnings("deprecation")
     @EventHandler(priority = EventPriority.LOWEST)
     public void onCommand(final PlayerCommandPreprocessEvent e){
         if(e.getMessage().indexOf(SEPARATOR)!=-1){  //If the BELL character is found, we have to remove it
@@ -195,7 +193,7 @@ public class ChatEventListener implements Listener {
             return;
         }
 
-        if (e.getPlayer().getItemInHand().getType().equals(Material.AIR)) {
+        if (e.getPlayer().getInventory().getItemInMainHand().getType().equals(Material.AIR)) {
             if (c.DENY_IF_NO_ITEM) {
                 e.setCancelled(true);
                 if (!c.DENY_MESSAGE.isEmpty()) {

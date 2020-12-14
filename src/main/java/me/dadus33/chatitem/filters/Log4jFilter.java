@@ -42,7 +42,7 @@ public class Log4jFilter implements Filter {
     }
 
 
-    @Override
+    /*@Override
     public Result filter(Logger logger, Level level, Marker marker, String s, Object objects) {
         return checkMessage(s);
     }
@@ -89,7 +89,7 @@ public class Log4jFilter implements Filter {
     @Override
     public Result filter(Logger logger, Level level, Marker marker, String s, Object o, Object o1, Object o2, Object o3, Object o4, Object o5, Object o6, Object o7, Object o8, Object o9) {
         return checkMessage(s);
-    }
+    }*/
 
     @Override
     public Result filter(Logger logger, Level level, Marker marker, Object o, Throwable throwable) {
@@ -106,7 +106,7 @@ public class Log4jFilter implements Filter {
         return checkMessage(logEvent.getMessage().getFormattedMessage());
     }
 
-    @Override
+    /*@Override
     public State getState() {
         return State.INITIALIZED;
     }
@@ -114,7 +114,7 @@ public class Log4jFilter implements Filter {
     @Override
     public void initialize() {
 
-    }
+    }*/
 
     @Override
     public void start() {

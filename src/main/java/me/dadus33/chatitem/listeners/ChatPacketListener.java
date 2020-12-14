@@ -125,8 +125,8 @@ public class ChatPacketListener extends PacketAdapter {
 
             String message = null;
             try {
-                if(!p.getItemInHand().getType().equals(Material.AIR)) {
-                    ItemStack copy = p.getItemInHand().clone();
+                if(!p.getInventory().getItemInMainHand().getType().equals(Material.AIR)) {
+                    ItemStack copy = p.getInventory().getItemInMainHand().clone();
                     if(copy.getType().equals(Material.WRITABLE_BOOK) || copy.getType().equals(Material.WRITTEN_BOOK)){ //filtering written books
                         BookMeta bm = (BookMeta)copy.getItemMeta();
                         bm.setPages(Collections.emptyList());
